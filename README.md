@@ -101,6 +101,14 @@ src/
 ### API Endpoints
 - `GET /ping` - Health check
 - `GET /items` - Listar todos los items
+  - **Filtros disponibles:**
+    - `name` (string, opcional) - Filtrar por nombre del item
+    - `minPrice` (number, opcional) - Precio mínimo
+    - `maxPrice` (number, opcional) - Precio máximo
+  - **Ejemplos:**
+    - `GET /items` - Todos los items
+    - `GET /items?name=laptop` - Items con "laptop" en el nombre
+    - `GET /items?minPrice=100&maxPrice=500` - Items entre $100 y $500
 - `GET /items/:id` - Obtener item por ID
 - `POST /items` - Crear nuevo item
 - `PUT /items/:id` - Actualizar item
