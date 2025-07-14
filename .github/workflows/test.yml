@@ -28,7 +28,7 @@ jobs:
       run: npm ci
 
     - name: Set test database URL
-      run: echo "DATABASE_URL=\"file:./test.db\"" >> $GITHUB_ENV
+      run: echo "DATABASE_URL=file:./test.db" >> $GITHUB_ENV
 
     - name: Run Prisma migrations
       run: npx prisma migrate deploy
