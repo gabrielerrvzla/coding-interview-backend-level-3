@@ -31,13 +31,77 @@ Eres el Senior Developer de tu equipo en El Dorado, y te han dado la responsabil
 - ❌ Estresarte 🤗
 
 
-## Pasos para comenzar
-1. Haz un fork usando este repositorio como template
-2. Clona el repositorio en tu máquina
-3. Realiza los cambios necesarios para que los tests pasen
-4. Sube tus cambios a tu repositorio
-5. Avísanos que has terminado
-6. ???
-7. PROFIT
+## Cómo ejecutar el proyecto
 
-### Cualquier duda contactarme a https://www.linkedin.com/in/andreujuan/
+### Prerrequisitos
+- Node.js >= 18.0.0
+- npm >= 8.0.0
+
+### Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/gabrielerrvzla/coding-interview-backend-level-3.git
+cd coding-interview-backend-level-3
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con tus configuraciones
+
+# Configurar la base de datos
+npx prisma generate
+npx prisma db push
+```
+
+### Desarrollo
+```bash
+# Ejecutar en modo desarrollo con hot reload
+npm run dev
+```
+
+### Tests
+```bash
+# Ejecutar todos los tests (unitarios + E2E)
+npm test
+
+# Ejecutar solo tests E2E
+npm run test:e2e
+
+# Ejecutar solo tests unitarios
+npm run test:unit
+
+# Ejecutar tests en modo watch
+npm run test:watch
+```
+
+### Producción
+```bash
+# Construir el proyecto
+npm run build
+
+# Ejecutar en producción
+npm start
+```
+
+### Estructura del proyecto
+```
+src/
+├── controllers/     # Controladores HTTP
+├── services/        # Lógica de negocio
+├── repositories/    # Acceso a datos
+├── models/          # Modelos de datos
+├── schemas/         # Validaciones Joi
+├── routes/          # Definición de rutas
+├── lib/             # Utilidades y configuración
+└── index.ts         # Punto de entrada
+```
+
+### API Endpoints
+- `GET /ping` - Health check
+- `GET /items` - Listar todos los items
+- `GET /items/:id` - Obtener item por ID
+- `POST /items` - Crear nuevo item
+- `PUT /items/:id` - Actualizar item
+- `DELETE /items/:id` - Eliminar item
